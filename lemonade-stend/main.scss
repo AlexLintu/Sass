@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 //Add variables here:
+$translucent-white: rgba(255, 255, 255, 0.3);
 
 h1 {
   font-family: Roboto, sans-serif;
@@ -23,6 +24,7 @@ h1 {
     left: 25%;
     width: 50%;
     height: 200px;
+    background-color: $translucent-white;
 
     span {
       position: absolute;
