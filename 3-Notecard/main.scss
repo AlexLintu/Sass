@@ -43,7 +43,8 @@ white;
   -o-transform: $transformation;
 }
 
-@mixin photo-content {
+@mixin photo-content($file) {
+  content: url(#{$file}.jpg);
   object-fit: cover;
 }
 
@@ -97,6 +98,7 @@ white;
       @include stripes($stripe-properties...);
 
       .photo {
+        @include photo-content('titanosaur');
         width: 60%;
         margin: 0px auto;
 
