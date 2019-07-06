@@ -3,6 +3,12 @@ $stripe-properties: to bottom,
 blue,
 white;
 
+@mixin hover-color($color) {
+  &:hover {
+    color: $color;
+  }
+}
+
 @mixin transition($time) {
   transition: $time;
   -webkit-transition: $time;
@@ -78,6 +84,7 @@ white;
     font-size: 20px;
 
     .word {
+      @include hover-color(red);
       display: block;
       text-align: center;
       position: relative;
