@@ -1,6 +1,18 @@
 $parallax-height: 100vh;
 $center-margin: 0px auto;
 
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+@mixin parallax-background($file) {
+  background: url($file) no-repeat center center fixed;
+  @include background-size(cover);
+}
+
 html,
 body {
   margin: 0;
@@ -10,13 +22,22 @@ body {
 }
 
 
-#landscape {}
+#landscape {
+  @include parallax-background("https://s3.amazonaws.com/codecademy-content/projects/sass/landscape.jpg");
+}
 
-#monkeys {}
+#monkeys {
+  @include parallax-background("https://s3.amazonaws.com/codecademy-content/projects/sass/monkeys.jpg");
+}
 
 #landscape,
 #monkeys {
+  width: 100%;
   height: $parallax-height;
+  perspective: 1px;
+  transform: translateZ(-1px);
+  overflow-x: hidden;
+  overflow-y: auto;
 
   h1 {
     text-transform: uppercase;
