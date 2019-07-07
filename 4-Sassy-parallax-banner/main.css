@@ -6,6 +6,11 @@ body {
   color: #2e3738;
 }
 
+#landscape,
+#monkeys {
+  height: 100vh;
+}
+
 #landscape h1,
 #monkeys h1 {
   text-transform: uppercase;
