@@ -11,3 +11,12 @@ $lagoon-blue: fade-out(#62fdca, 0.5);
   text-align: center;
   background-color: $lagoon-blue;
 }
+
+$list: (orange, purple, teal);
+
+//Add your each-loop here
+@each $item in $list {
+  .#{$item} {
+    background: $item;
+  }
+}
