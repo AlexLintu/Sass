@@ -14,9 +14,24 @@ $lagoon-blue: fade-out(#62fdca, 0.5);
 
 $list: (orange, purple, teal);
 
-//Add your each-loop here
+//Each Loop
 @each $item in $list {
   .#{$item} {
     background: $item;
+  }
+}
+
+// For Loop
+$total: 10; //Number of .ray divs in our html
+$step: 360deg / $total; //Used to compute the hue based on color-wheel
+
+
+.ray {
+  height: 30px;
+}
+
+@for $i from 1 through $total {
+  .ray:nth-child(#{$i}) {
+    background: adjust-hue(blue, $i * $step);
   }
 }
