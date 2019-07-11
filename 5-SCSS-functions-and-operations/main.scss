@@ -3,6 +3,7 @@ $lagoon-blue: fade-out(#62fdca, 0.5);
 
 .math {
   height: $width/6;
+  font-size: $width/6/2;
   line-height: $width/6;
   border-radius: $width/30;
   color: red + blue;
