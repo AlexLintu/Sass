@@ -1,3 +1,4 @@
+// Variables
 $top-foods: ("Sugar Cane"1898),
 ("Corn"1017),
 ("Rice"738),
@@ -11,6 +12,38 @@ $top-foods: ("Sugar Cane"1898),
 $diamond-blue: rgba(0, 159, 255, .6);
 $sea-green: rgba(10, 165, 153, .6);
 $pale-green: rgba(167, 240, 213, .6);
+
+// Each Loop
+@each $food,
+$tons-produced in $top-foods {
+  $i: index($top-foods, ($food $tons-produced));
+
+  rect:nth-child(#{$i + 1}) {
+    height: #{$tons-produced/3}px;
+
+    @if ($i % 3==0) {
+      background-color: fade-out($sea-green, $i*5/100);
+    }
+
+    @else if($i % 3==1) {
+      background-color: fade-out($pale-green, $i*5/100);
+    }
+
+    @else {
+      background-color: fade-out($diamond-blue, $i*5/100);
+    }
+
+    &:before {
+      content: $food;
+    }
+
+    &:after {
+      content: $tons-produced + "m";
+    }
+  }
+
+}
+
 
 h1 {
   font-family: 'Montserrat', sans-serif;
