@@ -1,3 +1,4 @@
+@import "helper/variables";
 @import url(https://fonts.googleapis.com/css?family=Pacifico); //CSS import
 @import "helper/placeholders";
 @import "helper/mixins";
@@ -5,6 +6,10 @@
 h1 {
   font-family: Roboto, sans-serif;
   @include center;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .banner {
@@ -18,6 +23,7 @@ h1 {
   }
 
   .slogan {
+    @extend .absolute;
     background-color: $translucent-white;
     border: 4px solid black;
     top: 200px;
@@ -26,6 +32,7 @@ h1 {
     @include dimensions(50%, 200px);
 
     span {
+      @extend .absolute;
       @include center;
       width: 40%;
       left: 30%;
